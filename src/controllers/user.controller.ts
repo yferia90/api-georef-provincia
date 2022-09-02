@@ -30,14 +30,12 @@ const signIn = async ({ body }: Request, res: Response) => {
         const { email, password } = body;
         const user = await getUserByEmail(email);
         if(!user) return res.status(400).json('Email or password is wrong');
-        console.log('ususario!!!!!!!',user);
         const isValidPass: boolean = await user.validatePassword(password);
         if(!isValidPass) return res.status(400).json('Invalid password');
     
         const token = await getToken(user._id);
         ResponseSuccess(res, 200, user, 'The user logged successfully.', token);
     }catch(err){
-        console.log('errorrrrrrr',err);
         ResponseError(res, 500, 'Internal server error.');
     }
 }
