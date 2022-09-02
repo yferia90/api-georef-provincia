@@ -1,7 +1,14 @@
 # api-georef-provincia
 
 ### Requisito previo a levantar el proyecto
-1. Tener instalado MongoDB que es la base de datos que se usa.
+* Tener instalado MongoDB que es la base de datos que se usa.
+
+### Crear un archivo .env con la siguiente configuracion
+* PORT=3001
+* URL_DB=mongodb://localhost:27017/api_georef_provincia
+* URL_DB_TEST=mongodb://localhost:27017/api_georef_provincia_test
+* JWT_SECRET_TEST=@pi.g30r3f.pr0v1nc14.test
+* JWT_SECRET=@pi.g30r3f.pr0v1nc14
 
 ### Supuestos
 * Cuando se dice el segundo endpoint tiene que retornar lat y lon de una provincia
@@ -10,9 +17,6 @@
 ### Patrón de diseño empleado (MVC)
 * Como el proyecto es pequeño se considera que adoptando una arquitectura MVC será 
 * suficiente para un buen desempeño de la API.
-
-### Documentation for API
-* http://localhost:3001/docs
 
 ### Package para documentar el API
 * swagger-jsdoc
