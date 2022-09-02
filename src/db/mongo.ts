@@ -9,7 +9,7 @@ const dbInit = async () => {
     try{
         await connect(URLDB);
         logger.info(URLDB);
-        seedUser();
+        // seedUser();
     }catch(err){
         logger.info(err);
     }

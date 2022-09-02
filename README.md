@@ -10,9 +10,10 @@
 * JWT_SECRET_TEST=@pi.g30r3f.pr0v1nc14.test
 * JWT_SECRET=@pi.g30r3f.pr0v1nc14
 
-### Supuestos
+### Supuestos y condiciones iniciales.
 * Cuando se dice el segundo endpoint tiene que retornar lat y lon de una provincia
 * se asume que el nombre de la provincia es un parámetro enviado por el ususario.
+* Se sugiere usar la API y crear un usuario de prueba con el endpoint: /v1/auth/signUp
 
 ### Patrón de diseño empleado (MVC)
 * Como el proyecto es pequeño se considera que adoptando una arquitectura MVC será 
