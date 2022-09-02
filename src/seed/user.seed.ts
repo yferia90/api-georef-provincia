@@ -14,12 +14,8 @@ const USER = {
 const seedUser = async () => {
     try{
         seeder.seed(USER, {dropDatabase: true}, (data, err) => {
-            console.log('resultDB!!!!',data);
-            console.log('resultDB!!!!',err);
         });        
     }catch(err){
-        console.log('ERROR!!!',err);
-        console.log('Coult not inset seed.');
     }
 }
 

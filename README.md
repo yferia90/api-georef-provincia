@@ -10,6 +10,10 @@
 * JWT_SECRET_TEST=@pi.g30r3f.pr0v1nc14.test
 * JWT_SECRET=@pi.g30r3f.pr0v1nc14
 
+### Comandos para correr la API
+* npm run dev
+* npm run test
+
 ### Supuestos y condiciones iniciales.
 * Cuando se dice el segundo endpoint tiene que retornar lat y lon de una provincia
 * se asume que el nombre de la provincia es un parámetro enviado por el ususario.
@@ -33,7 +37,7 @@
 ### Package para test unitario
 * jest y supertest
 
-### Package para el consumo de API Publica
+### Respuestas al cliente
 * Para unificar respuestas al cliente se implementó los métodos ResponseSuccess y ResponseError de esta forma se garantiza la coherencia de las respuestas.
 
 ### Sobre los status de las respuestas
