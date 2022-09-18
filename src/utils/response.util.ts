@@ -5,7 +5,7 @@ const ResponseSuccess = (res: Response, status = 200, data = {}, message = '', t
     let newData = [];
     newData = Array.isArray(data) ? data : [data];
     res.status(status).send({
-        error: '',
+        error: false,
         data: newData,
         message
     });
@@ -13,9 +13,9 @@ const ResponseSuccess = (res: Response, status = 200, data = {}, message = '', t
 
 const ResponseError = (res: Response, status = 500, message = '') => {
     res.status(status).send({
-        error: message,
+        error: true,
         data: [],
-        message: ''
+        message: message
     });
 }
 

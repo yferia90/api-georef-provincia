@@ -1,18 +1,17 @@
 import { connect } from 'mongoose';
 import getUrlDB from '../utils/util.util';
-import seedUser from '../seed/user.seed';
 import logger from '../utils/logger.utils';
 
 const URLDB = getUrlDB();
 
-const dbInit = async () => {
+const connectDataBase = async () => {
     try{
         await connect(URLDB);
-        logger.info(URLDB);
-        // seedUser();
+        return true;
     }catch(err){
         logger.info(err);
+        return false;
     }
 }
 
-export default dbInit;
+export default connectDataBase;

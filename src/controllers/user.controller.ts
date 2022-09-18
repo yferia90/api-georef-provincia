@@ -7,7 +7,7 @@ import { ResponseSuccess, ResponseError } from '../utils/response.util';
 const listUsers = async (req: Request, res: Response) => {
     try{
         const listUsers = await getUsers();
-        ResponseSuccess(res, 200, listUsers, 'User list.');
+        ResponseSuccess(res, 200, listUsers);
     }catch(err){
         ResponseError(res, 500, 'Internal server error.');
     }
@@ -19,7 +19,7 @@ const signUp = async (req: Request, res: Response) => {
         const { body } = req;
         const userId = await registerUser(body);
         const token = await getToken(userId);
-        ResponseSuccess(res, 200, [], 'User created successfully.', token);
+        ResponseSuccess(res, 201, [], 'User created successfully.', token);
     }catch(err){
         ResponseError(res, 500, 'Internal server error.');
     }

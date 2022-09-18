@@ -42,3 +42,13 @@
 
 ### Sobre los status de las respuestas
 * Se implementó una representación de ellos. Para el caso no se consideró necesario hacer una implementación exhaustiva.
+
+### Códigos HTTP que se emplean en la API REST
+* 201 Recurso creado
+* 202 Solicitud recibida. En proceso
+* 204 Solicitud exitosa. Respuesta sin contenido
+* 401 No autorizado
+* 403 Acceso prohibido
+* 404 Recurso no encontrado
+* 405 Método no permitido
+* 500 Error interno del servidor

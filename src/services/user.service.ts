@@ -49,9 +49,28 @@ const getUserById = async (id: string) => {
     return user;
 }
 
+/**
+ * Description: Siembra de usuarios
+ * @param users 
+ * @returns 
+ */
+const bulkUsersDB = async (users: Array<Object>) => {
+    try{
+        let bulkInsert = UserModel.collection.initializeOrderedBulkOp();
+        users && users.map(async item => {
+            await bulkInsert.insert(item);
+        });
+        const insertBulkUsers = await bulkInsert.execute();
+        return insertBulkUsers;
+    }catch(err){
+        return err;
+    }
+}
+
 export {
     getUsers,
     registerUser,
     getUserByEmail,
-    getUserById
+    getUserById,
+    bulkUsersDB,
 }
