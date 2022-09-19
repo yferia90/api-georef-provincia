@@ -1,5 +1,7 @@
 import { Router } from 'express';
+
 import { signUp, signIn, listUsers } from '../controllers/user.controller';
+import validateUser from '../validators/user.validator';
 
 const userRoute: Router = Router();
 /**
@@ -136,7 +138,7 @@ userRoute.get('/users', listUsers);
  *                                  description: If there is not error, send a message
  *                                  example: ''
 */
-userRoute.post('/signUp', signUp);
+userRoute.post('/signUp', validateUser,  signUp);
 
 /**
  * @swagger

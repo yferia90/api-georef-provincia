@@ -4,7 +4,7 @@ import { getToken } from '../utils/token.util';
 import { registerUser, getUserByEmail, getUsers } from "../services/user.service";
 import { ResponseSuccess, ResponseError } from '../utils/response.util';
 
-const listUsers = async (req: Request, res: Response) => {
+export const listUsers = async (req: Request, res: Response) => {
     try{
         const listUsers = await getUsers();
         ResponseSuccess(res, 200, listUsers);
@@ -13,8 +13,7 @@ const listUsers = async (req: Request, res: Response) => {
     }
 }
 
-
-const signUp = async (req: Request, res: Response) => {
+export const signUp = async (req: Request, res: Response) => {
     try{
         const { body } = req;
         const userId = await registerUser(body);
@@ -25,7 +24,7 @@ const signUp = async (req: Request, res: Response) => {
     }
 }
 
-const signIn = async ({ body }: Request, res: Response) => {
+export const signIn = async ({ body }: Request, res: Response) => {
     try{
         const { email, password } = body;
         const user = await getUserByEmail(email);
@@ -38,10 +37,4 @@ const signIn = async ({ body }: Request, res: Response) => {
     }catch(err){
         ResponseError(res, 500, 'Internal server error.');
     }
-}
-
-export {
-    listUsers,
-    signUp,
-    signIn
 }
