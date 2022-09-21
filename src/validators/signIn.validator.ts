@@ -12,8 +12,8 @@ const signInValidator = [
         .withMessage('The email format is incorrect')
         .custom(async (value) => {
             const findUserByEmail = await getUserByEmail(value);
-            if (!findUserByEmail) return true;
-            throw new Error('The email must be unique');
+            if (findUserByEmail) return true;
+            else throw new Error('The email must be unique');
         }),
     check('password')
         .exists()

@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import { getUserById } from '../services/user.service';
 import { PayloadInterface } from '../types/user.type';
-import { ResponseSuccess, ResponseError } from './response.util';
+import { ResponseError } from './response.util';
 
 const NODE_ENV = `${process.env.NODE_ENV}`;
 const JWT_SECRET = `${process.env.JWT_SECRET}`;
