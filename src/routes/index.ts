@@ -14,7 +14,6 @@ router.use('/auth', userRoute);
  * Se implementó el método tokenValidation con el fin de usarse en endpoints
  * que requieran vaidación de token.
 */
-// router.use('/province', tokenValidation, provinceRoute);
-router.use('/province', provinceRoute);
+router.use('/province', tokenValidation, provinceRoute);
 
 export default router;

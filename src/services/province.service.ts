@@ -2,6 +2,7 @@ import fetch from 'node-fetch';
 
 const URL_PROVINCES = 'https://apis.datos.gob.ar/georef/api/provincias';
 
+// Consumiendo un servicio externo
 const validateProvince = async (province: string) => {
     try{
         const response = await fetch(`${URL_PROVINCES}?nombre=${province}`);
@@ -18,9 +19,9 @@ const getLatLongByProvince = (provincias: { centroide: any; }[]) => {
 }
 
 const getLatLongProvince = async (province: string) => {
-    const valProvince = await validateProvince(province);
-    if(valProvince!=null){
-        const { total, provincias } = valProvince;
+    const valuesProvince = await validateProvince(province);
+    if(valuesProvince != null){
+        const { total, provincias } = valuesProvince;
         let latLong;
         switch(total){
             case 1:
