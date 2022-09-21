@@ -4,13 +4,7 @@ import { check } from 'express-validator';
 import validateResult from '../utils/validate.utils';
 import { getUserByEmail } from '../services/user.service';
 
-const validateUser = [
-    check('username')
-        .exists()
-        .withMessage('The username is required field')
-        .not()
-        .isEmpty()
-        .withMessage('The username can not be empty'),
+const signInValidator = [
     check('email')
         .exists()
         .withMessage('The email is required field')
@@ -32,4 +26,4 @@ const validateUser = [
     }
 ]
 
-export default validateUser;
+export default signInValidator;

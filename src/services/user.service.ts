@@ -2,13 +2,13 @@ import UserModel from "../models/user.schema";
 import { UserInterface } from "../types/user.type";
 
 /**
- * All users
+ * Paginate users
  * @returns 
  */
-const getUsers = async () => {
+const getUsers = async (limit: number, page: number) => {
     try{
-        const allUsers = await UserModel.find({}).limit(10);
-        return allUsers;
+        const findUsers = await UserModel.paginate({}, {limit, page});
+        return findUsers;
     }catch(err){
         return "Internal server error";
     }

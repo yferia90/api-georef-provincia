@@ -1,5 +1,6 @@
-import { Schema, model } from 'mongoose';
+import mongoose, { Schema, model } from 'mongoose';
 import bcrypt from 'bcryptjs';
+import mongoosePaginate from 'mongoose-paginate-v2';
 
 import { UserInterface } from '../types/user.type';
 
@@ -33,6 +34,9 @@ UserSchema.methods.validatePassword = async function (password: string): Promise
     return await bcrypt.compare(password, this.password);
 }
 
-const UserModel = model<UserInterface>("users", UserSchema);
+// Incluyendo el plugin de paginado al schema de usuario
+UserSchema.plugin(mongoosePaginate);
+
+const UserModel = model<UserInterface, mongoose.PaginateModel<UserInterface>>("users", UserSchema);
 
 export default UserModel;

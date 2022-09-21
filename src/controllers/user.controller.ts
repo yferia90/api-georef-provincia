@@ -3,10 +3,14 @@ import { Request, Response } from "express";
 import { getToken } from '../utils/token.util';
 import { registerUser, getUserByEmail, getUsers } from "../services/user.service";
 import { ResponseSuccess, ResponseError } from '../utils/response.util';
+import { QueryData } from '../types/user.type';
 
-export const listUsers = async (req: Request, res: Response) => {
+export const listUsers = async ({ query }: Request, res: Response) => {
     try{
-        const listUsers = await getUsers();
+        const { limit, page } = query as unknown as QueryData;
+        const queryLimit = parseInt(limit) || 10;
+        const queryPage = parseInt(page) || 1;
+        const listUsers = await getUsers(queryLimit, queryPage);
         ResponseSuccess(res, 200, listUsers);
     }catch(err){
         ResponseError(res, 500, 'Internal server error.');

@@ -1,4 +1,5 @@
 import { Document } from 'mongoose';
+import { PaginationModel } from './pagination.type';
 
 export interface UserInterface extends Document {
     username: string,
@@ -6,6 +7,7 @@ export interface UserInterface extends Document {
     password: string,
     encryptPassword(password: string): Promise<string>,
     validatePassword(password: string): Promise<boolean>,
+    pagination: PaginationModel,
 }
 
 export interface PayloadInterface extends Document {
@@ -13,3 +15,8 @@ export interface PayloadInterface extends Document {
     iat: number,
     exp: number
 }
+
+export interface QueryData {
+    limit: string,
+    page: string
+};
