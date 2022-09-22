@@ -5,7 +5,7 @@ import morgan from 'morgan';
 
 import routes from '../routes';
 import connectDataBase from '../db/mongo';
-import { options } from '../../swaggerOptions';
+import { options } from './swaggerOptions';
 import { ResponseError } from '../utils/response.util';
 import seedUser from '../seed/user.seed';
 

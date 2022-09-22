@@ -10,5 +10,5 @@ export const options = {
             }]
         }
     },
-    apis: ["./src/routes"]
+    apis: ["./src/routes/*.ts"]
 }

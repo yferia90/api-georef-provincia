@@ -1,7 +1,7 @@
 module.exports = {
     apps : [{
       name: "API-GEOREF-PROVINCE",
-      script: "./build/src/app.js",
+      script: "./build/app.js",
       env: {
         NODE_ENV: "development",
       },

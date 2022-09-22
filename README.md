@@ -10,9 +10,14 @@
 * JWT_SECRET_TEST=@pi.g30r3f.pr0v1nc14.test
 * JWT_SECRET=@pi.g30r3f.pr0v1nc14
 
-### Comandos para correr la API
+### Corriendo la API REST en modo desarrollo
 * npm run dev
+### Corriendo la API REST en modo test
 * npm run test
+### Comando para compilar la API REST
+* npm run build
+### Corriendo la API REST en modo producción
+* npm run start
 
 ### Supuestos y condiciones iniciales.
 * Cuando se dice el segundo endpoint tiene que retornar lat y lon de una provincia
@@ -42,13 +47,3 @@
 
 ### Sobre los status de las respuestas
 * Se implementó una representación de ellos. Para el caso no se consideró necesario hacer una implementación exhaustiva.
-
-### Códigos HTTP que se emplean en la API REST
-* 201 Recurso creado
-* 202 Solicitud recibida. En proceso
-* 204 Solicitud exitosa. Respuesta sin contenido
-* 401 No autorizado
-* 403 Acceso prohibido
-* 404 Recurso no encontrado
-* 405 Método no permitido
-* 500 Error interno del servidor
